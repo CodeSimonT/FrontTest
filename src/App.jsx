@@ -25,7 +25,7 @@ function App() {
   };
   const submit = async (e) => {
     e.preventDefault();
-    location.reload();
+
     try {
       const option = {
         name: name,
@@ -34,6 +34,7 @@ function App() {
         address: address,
       };
       await axios.post(`${URL}/users`, option);
+      location.reload();
     } catch (error) {
       alert(error);
     }
